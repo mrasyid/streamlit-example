@@ -7,7 +7,7 @@ import streamlit as st
 import streamlit as st
 
 def main():
-    st.title('Rosemary')
+    st.title('Rosemary: product properties enhancement and marketing auxiliary')
     search = st.text_input('Enter product url')
 
 if __name__ == '__main__':
