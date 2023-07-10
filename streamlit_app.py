@@ -11,11 +11,6 @@ def enhance_title(title):
 
 def enhance_desc(desc):
     return "This product will make you happier and more productive. " + desc 
-
-# Keyword function
-def get_keywords(text):
-    blob = TextBlob(text)
-    return blob.noun_phrases
         
 def main():
     st.title("Rosemary: product properties enhancement and marketing auxiliary")
@@ -31,8 +26,6 @@ def main():
         enhanced_title = enhance_title(original_title)
         enhanced_desc = enhance_desc(original_desc)
         
-        # Get keywords
-        keywords = get_keywords(original_title + " " + original_desc)
         
         # Display results
         st.subheader("Original")
@@ -42,9 +35,7 @@ def main():
         st.subheader("Enhanced")
         st.write("Title: ", enhanced_title)  
         st.write("Description: ", enhanced_desc)
-        
-        st.subheader("Keywords")
-        st.write(", ".join(keywords))
+
         
 if __name__ == '__main__':
     main()
