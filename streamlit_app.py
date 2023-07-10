@@ -44,5 +44,5 @@ def main():
     st.subheader("Keywords")
     st.write(", ".join(keywords))
     
-    if __name__ == '__main__':
-        main()
+if __name__ == '__main__':
+    main()
