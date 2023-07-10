@@ -24,25 +24,27 @@ def main():
     # Input fields
     original_title = st.text_input("Original Title")
     original_desc = st.text_area("Original Description")
+    
+    # Button to trigger execution
+    if st.button("Enhance My Product Properties!"):    
+        # Enhance text  
+        enhanced_title = enhance_title(original_title)
+        enhanced_desc = enhance_desc(original_desc)
         
-    # Enhance text  
-    enhanced_title = enhance_title(original_title)
-    enhanced_desc = enhance_desc(original_desc)
-    
-    # Get keywords
-    keywords = get_keywords(original_title + " " + original_desc)
-    
-    # Display results
-    st.subheader("Original")
-    st.write("Title: ", original_title)
-    st.write("Description: ", original_desc)
-    
-    st.subheader("Enhanced")
-    st.write("Title: ", enhanced_title)  
-    st.write("Description: ", enhanced_desc)
-    
-    st.subheader("Keywords")
-    st.write(", ".join(keywords))
-    
+        # Get keywords
+        keywords = get_keywords(original_title + " " + original_desc)
+        
+        # Display results
+        st.subheader("Original")
+        st.write("Title: ", original_title)
+        st.write("Description: ", original_desc)
+        
+        st.subheader("Enhanced")
+        st.write("Title: ", enhanced_title)  
+        st.write("Description: ", enhanced_desc)
+        
+        st.subheader("Keywords")
+        st.write(", ".join(keywords))
+        
 if __name__ == '__main__':
     main()
