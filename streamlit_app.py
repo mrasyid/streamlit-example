@@ -5,6 +5,18 @@ import pandas as pd
 import streamlit as st
 from textblob import TextBlob
 
+# Enhancement functions
+def enhance_title(title):
+    return title + " - The Best on the Market!"
+
+def enhance_desc(desc):
+    return "This product will make you happier and more productive. " + desc 
+
+# Keyword function
+def get_keywords(text):
+    blob = TextBlob(text)
+    return blob.noun_phrases
+        
 def main():
     st.title("Rosemary: product properties enhancement and marketing auxiliary")
     st.write("Turn your product words into sales!") 
@@ -12,19 +24,7 @@ def main():
     # Input fields
     original_title = st.text_input("Original Title")
     original_desc = st.text_area("Original Description")
-    
-    # Enhancement functions
-    def enhance_title(title):
-        return title + " - The Best on the Market!"
-    
-    def enhance_desc(desc):
-        return "This product will make you happier and more productive. " + desc 
-    
-    # Keyword function
-    def get_keywords(text):
-        blob = TextBlob(text)
-        return blob.noun_phrases
-    
+        
     # Enhance text  
     enhanced_title = enhance_title(original_title)
     enhanced_desc = enhance_desc(original_desc)
