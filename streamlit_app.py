@@ -13,8 +13,8 @@ def enhance_desc(desc):
     return "This product will make you happier and more productive. " + desc 
         
 def main():
-    st.title("Rosemary: product properties enhancement and marketing auxiliary")
-    st.write("Turn your product words into sales!") 
+    st.title("Prototype app")
+    st.write("Enchaning!") 
 
     # Input fields
     original_title = st.text_input("Original Title")
